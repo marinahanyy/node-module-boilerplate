@@ -15,7 +15,8 @@
 		"node": ">=16"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava",
+		"lint": "eslint ."
 	},
 	"files": [
 		"index.js"
@@ -24,9 +25,13 @@
 		"unicorn",
 		"fun"
 	],
-	"dependencies": {},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^7.0.1",
+		"@typescript-eslint/parser": "^7.0.1",
 		"ava": "^5.3.0",
+		"eslint": "^8.56.0",
+		"eslint-plugin-react": "^7.33.2",
+		"react": "^18.2.0",
 		"xo": "^0.54.2"
 	}
 }
