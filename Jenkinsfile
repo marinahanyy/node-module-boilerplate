@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        NODEJS_HOME = 'C:\\Program Files\\nodejs'  // Adjust the path to your Node.js installation directory
+        PATH = "${NODEJS_HOME};${env.PATH}"
+    }
+
     stages {
         stage('Checkout SCM') {
             steps {
@@ -12,15 +17,12 @@ pipeline {
             steps {
                 echo 'Running npm install'
                 bat 'npm install'
-
                 echo 'Installing ESLint and Prettier'
-                // Install ESLint and Prettier globally (optional)
-                bat 'npm install -g eslint prettier'
-
+                // Install ESLint and Prettier locally
+                bat 'npm install -D eslint prettier'
                 echo 'Installing Cypress for E2E testing (if needed)'
                 // Install Cypress locally
                 bat 'npm install -D cypress'
-
                 echo 'Installing React locally'
                 // Install React locally
                 bat 'npm install -D react'
@@ -38,14 +40,10 @@ pipeline {
             steps {
                 echo 'Running code hygiene tasks'
 
-                // Run npm audit fix first if needed
-                bat 'npm audit fix'
-
-                // Run npm audit to get more details
-                bat 'npm audit'
-
                 powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
                 bat 'type lint_output.txt'
+                // npm audit fix
+                // npm audit
             }
         }
 
