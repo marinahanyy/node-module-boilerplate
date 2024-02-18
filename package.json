@@ -16,7 +16,8 @@
 	},
 	"scripts": {
 		"test": "xo && ava",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"format": "prettier --write *.js"
 	},
 	"files": [
 		"index.js"
