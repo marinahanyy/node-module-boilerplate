@@ -21,7 +21,7 @@ pipeline {
 
                     // Verify Cypress installation path
                     bat 'dir node_modules\\cypress /s'
-					bat npm install cypress@latest
+		    bat 'npm install cypress@latest'
 
                     // Run Cypress using full path
                     bat '"C:\\Program Files\\nodejs\\node_modules\\.bin\\cypress" run'
