@@ -31,12 +31,6 @@ pipeline {
             steps {
                 echo 'Running code hygiene tasks'
 
-                // Run npm audit fix first if needed
-                bat 'npm audit fix'
-
-                // Run npm audit to get more details
-                bat 'npm audit'
-
                 powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
                 bat 'type lint_output.txt'
             }
