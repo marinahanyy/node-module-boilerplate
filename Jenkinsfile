@@ -20,7 +20,7 @@ pipeline {
 				
 				echo 'Installing ESLint and Prettier'
             // Install ESLint and Prettier globally
-                bat 'npm install -g eslint prettier'
+                bat 'npm install -g eslint'
 
 				echo 'Installing Cypress for E2E testing (if needed)'
             // Install Cypress for E2E testing (optional, install if you have E2E tests)
@@ -43,13 +43,6 @@ pipeline {
 
                 powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
                 bat 'type lint_output.txt'
-            }
-        }
-
-	stage('Run Code Formatter') {
-            steps {
-                echo 'Running code formatter'
-                bat 'npm run format'
             }
         }
 
