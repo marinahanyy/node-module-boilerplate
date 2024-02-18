@@ -25,6 +25,8 @@ pipeline {
 				echo 'Installing Cypress for E2E testing (if needed)'
             // Install Cypress for E2E testing (optional, install if you have E2E tests)
                 bat 'npm install -g cypress'
+		bat 'npm install --save-dev react'
+
             }
         }
 
