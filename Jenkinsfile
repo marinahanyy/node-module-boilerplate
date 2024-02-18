@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo 'Running unit tests'
                 catchError {
-                    bat 'npm test'
+                    bat '"C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\angularproject\\node_modules\\.bin\\cypress" run'
                 }
             }
         }
