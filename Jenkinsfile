@@ -20,7 +20,7 @@ pipeline {
 	
 	        echo 'Installing ESLint and Prettier'
 	        // Install ESLint and Prettier locally
-	        bat 'npm install -D eslint prettier'
+	        bat 'npm install -D eslint'
 	
 	        echo 'Installing Cypress for E2E testing (if needed)'
 	        // Install Cypress locally
