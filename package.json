@@ -16,7 +16,7 @@
 	},
 	"scripts": {
 		"test": "xo && ava",
-		"lint": "eslint ."
+		"lint": "eslint . --config .eslintrc.json",
 	},
 	"files": [
 		"index.js"
