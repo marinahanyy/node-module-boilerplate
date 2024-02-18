@@ -19,12 +19,12 @@ pipeline {
                 catchError {
                     bat 'npm install'
 
-                    // Verify Cypress installation path
-                    bat 'dir node_modules\\cypress /s'
-		    bat 'npm install cypress@latest'
+      //               // Verify Cypress installation path
+      //               bat 'dir node_modules\\cypress /s'
+		    // bat 'npm install cypress@latest'
 
-                    // Run Cypress using full path
-                    bat '"C:\\Program Files\\nodejs\\node_modules\\.bin\\cypress" run'
+      //               // Run Cypress using full path
+      //               bat '"C:\\Program Files\\nodejs\\node_modules\\.bin\\cypress" run'
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Running unit tests'
                 catchError {
-                    bat '"C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\angularproject\\node_modules\\.bin\\cypress" run'
+                    bat 'npm run test'
                 }
             }
         }
