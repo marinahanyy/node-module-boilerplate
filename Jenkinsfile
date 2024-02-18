@@ -32,11 +32,14 @@ pipeline {
                 echo 'Running code hygiene tasks'
                 
                 powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
-				bat 'type lint_output.txt'
-
+		bat 'type lint_output.txt'
+		    
+                bat 'npm test'
                 
                 // Example: Run a code formatter
                 bat 'npm run format'  // Replace with the actual formatting command
+
+		
             }
         }
 
