@@ -17,6 +17,14 @@ pipeline {
             steps {
                 echo 'Running npm install'
                 bat 'npm install'
+				
+				echo 'Installing ESLint and Prettier'
+            // Install ESLint and Prettier globally
+                bat 'npm install -g eslint prettier'
+
+				echo 'Installing Cypress for E2E testing (if needed)'
+            // Install Cypress for E2E testing (optional, install if you have E2E tests)
+                bat 'npm install -g cypress'
             }
         }
 
