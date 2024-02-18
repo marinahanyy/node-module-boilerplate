@@ -5,25 +5,25 @@
 // This file demonstrates how to create various custom Cypress commands.
 
 // Parent command: Login
-Cypress.Commands.overwrite('login', (email, password) => {
+Cypress.Commands.add('login', (email, password) => {
   // Implementation of login command
   // ...
 });
 
 // Child command: Drag
-Cypress.Commands.overwrite('drag', { prevSubject: 'element' }, (subject, options) => {
+Cypress.Commands.add('drag', { prevSubject: 'element' }, (subject, options) => {
   // Implementation of drag command
   // ...
 });
 
 // Child command: Dismiss
-Cypress.Commands.overwrite('dismiss', { prevSubject: 'optional' }, (subject, options) => {
+Cypress.Commands.add('dismiss', { prevSubject: 'optional' }, (subject, options) => {
   // Implementation of dismiss command
   // ...
 });
 
 // Dual command: Visit
-Cypress.Commands.overwrite('visit', { prevSubject: 'optional' }, (subject, options) => {
+Cypress.Commands.add('visit', { prevSubject: 'optional' }, (subject, options) => {
   // Implementation of visit command
   // ...
 });
