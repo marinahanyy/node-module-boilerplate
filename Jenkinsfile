@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Running npm install'
                 bat 'npm install'
+		bat 'npm install --save-dev prettier'
             }
         }
 
