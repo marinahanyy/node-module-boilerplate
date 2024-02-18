@@ -18,15 +18,15 @@ pipeline {
                 echo 'Running npm install'
                 bat 'npm install'
                 echo 'Installing ESLint and Prettier'
-                Install ESLint and Prettier locally
+               // Install ESLint and Prettier locally
                 bat 'npm install -D eslint prettier'
                 echo 'Installing Cypress for E2E testing (if needed)'
-                Install Cypress locally
+                //Install Cypress locally
                 bat 'npm install -D cypress'
                 echo 'Installing React locally'
-                Install React locally
+                //Install React locally
                 bat 'npm install -D react'
-				echo 'Installing ESLint plugin for React Hooks'
+		echo 'Installing ESLint plugin for React Hooks'
                 // Install ESLint plugin for React Hooks
                 bat 'npm install -D eslint-plugin-react-hooks'
             }
