@@ -17,7 +17,6 @@ pipeline {
             steps {
                 echo 'Running npm install'
                 bat 'npm install'
-                bat 'npm install --save-dev prettier'
             }
         }
 
@@ -44,13 +43,6 @@ pipeline {
         }
 
         // Add more stages as needed
-
-        stage('Run Code Formatter') {
-            steps {
-                echo 'Running code formatter'
-                bat 'npm run format'
-            }
-        }
     }
 
     post {
