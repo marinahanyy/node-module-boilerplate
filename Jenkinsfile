@@ -22,12 +22,8 @@ pipeline {
   //               bat 'npm install -D eslint prettier'
   //               echo 'Installing Cypress for E2E testing (if needed)'
   //               //Install Cypress locally
-<<<<<<< HEAD
                bat 'npm install -D cypress'
                bat 'npx cypress run'
-=======
-                bat 'npx cypress run --config-file cypress.config.ts'
->>>>>>> origin/main
   //               echo 'Installing React locally'
   //               //Install React locally
   //               bat 'npm install -D react'
