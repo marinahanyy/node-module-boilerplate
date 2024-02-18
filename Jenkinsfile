@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODEJS_HOME = 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Node.js'
+        NODEJS_HOME = 'C:\\Program Files\\nodejs'  // Adjust the path to your Node.js installation directory
         PATH = "${NODEJS_HOME};${env.PATH}"
     }
 
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Running npm install'
                 bat 'npm install'
-		bat 'npm install --save-dev prettier'
+                bat 'npm install --save-dev prettier'
             }
         }
 
@@ -31,20 +31,26 @@ pipeline {
         stage('Code Hygiene') {
             steps {
                 echo 'Running code hygiene tasks'
-                
-                powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
-		bat 'type lint_output.txt'
-		    
-                bat 'npm test'
-                
-                // Example: Run a code formatter
-                bat 'npm run format'  // Replace with the actual formatting command
 
-		
+                // Run npm audit fix first if needed
+                bat 'npm audit fix'
+
+                // Run npm audit to get more details
+                bat 'npm audit'
+
+                powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
+                bat 'type lint_output.txt'
             }
         }
 
         // Add more stages as needed
+
+        stage('Run Code Formatter') {
+            steps {
+                echo 'Running code formatter'
+                bat 'npm run format'
+            }
+        }
     }
 
     post {
