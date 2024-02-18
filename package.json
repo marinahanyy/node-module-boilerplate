@@ -15,7 +15,8 @@
   },
   "scripts": {
     "test": "xo && ava",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "cypress": "cypress open --config-file cypress.config.cjs"
   },
   "files": [
     "index.js"
