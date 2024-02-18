@@ -27,6 +27,18 @@ pipeline {
             }
         }
 
+        stage('Code Hygiene') {
+            steps {
+                echo 'Running code hygiene tasks'
+                
+                // Example: Run a linter
+                bat 'npm run lint'  // Replace with the actual linting command
+                
+                // Example: Run a code formatter
+                bat 'npm run format'  // Replace with the actual formatting command
+            }
+        }
+
         // Add more stages as needed
     }
 
