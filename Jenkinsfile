@@ -20,6 +20,13 @@ pipeline {
             }
         }
 
+        stage('Run Unit Tests') {
+            steps {
+                echo 'Running unit tests'
+                bat 'npm test'  // Replace with the actual command for running your unit tests
+            }
+        }
+
         // Add more stages as needed
     }
 
