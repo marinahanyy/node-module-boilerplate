@@ -32,7 +32,7 @@ pipeline {
                 echo 'Running code hygiene tasks'
                 
                 // Example: Run a linter
-                bat 'npm run lint -- --fix'  
+                bat 'npm run lint -- --config .eslintrc.json | head -n 20'
                 
                 // Example: Run a code formatter
                 bat 'npm run format'  // Replace with the actual formatting command
