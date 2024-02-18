@@ -46,6 +46,13 @@ pipeline {
             }
         }
 
+	stage('Run Code Formatter') {
+            steps {
+                echo 'Running code formatter'
+                bat 'npm run format'
+            }
+        }
+
         // Add more stages as needed
     }
 
