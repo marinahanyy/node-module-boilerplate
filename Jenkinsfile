@@ -14,14 +14,13 @@ pipeline {
         }
 
         stage('Install Dependencies') {
-  			steps {
-		        bat 'echo Current directory: %cd%'
-		        bat 'npm --version'
-		        bat 'npm config list'
-		        bat 'npm install'
-   			 }
-		}
-
+            steps {
+                script {
+                    echo 'Running npm install'
+                    bat 'npm install'
+                }
+            }
+        }
 
         // Add more stages as needed
     }
