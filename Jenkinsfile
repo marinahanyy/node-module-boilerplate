@@ -36,11 +36,11 @@ pipeline {
                 }
             }
         }
+    }
 
-        post {
-            always {
-                echo 'Always running, regardless of success or failure!'
-            }
+    post {
+        always {
+            echo 'Always running, regardless of success or failure!'
         }
     }
 }
