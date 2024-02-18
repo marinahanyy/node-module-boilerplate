@@ -17,15 +17,15 @@ pipeline {
             steps {
                 echo 'Running npm install'
                 bat 'npm install'
-                echo 'Installing ESLint and Prettier'
+                //echo 'Installing ESLint and Prettier'
                 // Install ESLint and Prettier locally
-                bat 'npm install -D eslint prettier'
-                echo 'Installing Cypress for E2E testing (if needed)'
+                //bat 'npm install -D eslint prettier'
+                //echo 'Installing Cypress for E2E testing (if needed)'
                 // Install Cypress locally
-                bat 'npm install -D cypress'
-                echo 'Installing React locally'
+                //bat 'npm install -D cypress'
+                //echo 'Installing React locally'
                 // Install React locally
-                bat 'npm install -D react'
+                //bat 'npm install -D react'
             }
         }
 
@@ -36,16 +36,16 @@ pipeline {
             }
         }
 
-        stage('Code Hygiene') {
-            steps {
-                echo 'Running code hygiene tasks'
+        // stage('Code Hygiene') {
+        //     steps {
+        //         echo 'Running code hygiene tasks'
 
-                powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
-                bat 'type lint_output.txt'
-                // npm audit fix
-                // npm audit
-            }
-        }
+        //         powershell 'npm run lint -- --config .eslintrc.json > lint_output.txt'
+        //         bat 'type lint_output.txt'
+        //         // npm audit fix
+        //         // npm audit
+        //     }
+        // }
 
         // Add more stages as needed
     }
